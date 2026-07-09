@@ -1,0 +1,9 @@
+{
+  "appId": "com.vernieesgana.bantayanislandtravelguide",
+  "appName": "Bantayan Island Travel Guide",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "android": {
+    "allowMixedContent": true
+  }
+}
