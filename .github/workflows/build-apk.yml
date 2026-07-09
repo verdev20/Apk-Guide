@@ -28,10 +28,19 @@ jobs:
           java-version: "17"
 
       - name: Install Node dependencies
-        run: npm ci --no-audit --no-fund || npm ci --no-audit --no-fund
+        run: |
+          npm install -g npm@11
+          for i in 1 2 3; do
+            echo "npm ci attempt $i"
+            rm -rf node_modules
+            npm ci --no-audit --no-fund --loglevel=warn && break
+            echo "npm ci attempt $i failed, retrying..."
+            sleep 5
+          done
+          test -x node_modules/.bin/cap
 
       - name: Sync Capacitor Android project
-        run: npx --no-install cap sync android
+        run: node_modules/.bin/cap sync android
 
       - name: Grant execute permission for gradlew
         run: chmod +x android/gradlew
