@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Bantayan Island Travel Guide</title>
+<meta name="description" content="Bantayan Island Travel Guide — map, compass, places, ferry schedule, unlimited-day trip planner, and budget estimator for Santa Fe, Bantayan, and Madridejos, Cebu.">
+<meta name="theme-color" content="#07243B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ════════════════════════════════════════
+     SPLASH SCREEN
+════════════════════════════════════════ -->
+<div class="splash" id="splash" aria-hidden="false">
+  <div class="splash-waves">
+    <div class="wave wave-1"></div>
+    <div class="wave wave-2"></div>
+    <div class="wave wave-3"></div>
+  </div>
+
+  <div class="splash-center">
+    <div class="splash-compass" id="splashCompass">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="compass-svg">
+        <circle cx="100" cy="100" r="95" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <circle cx="100" cy="100" r="80" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+        <g fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1">
+          <line x1="100" y1="6" x2="100" y2="18"/>
+          <line x1="100" y1="182" x2="100" y2="194"/>
+          <line x1="6" y1="100" x2="18" y2="100"/>
+          <line x1="182" y1="100" x2="194" y2="100"/>
+        </g>
+        <g fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="0.5">
+          <line x1="148.5" y1="9.9" x2="143.5" y2="18.5"/><line x1="51.5" y1="9.9" x2="56.5" y2="18.5"/>
+          <line x1="190.1" y1="51.5" x2="181.5" y2="56.5"/><line x1="190.1" y1="148.5" x2="181.5" y2="143.5"/>
+          <line x1="148.5" y1="190.1" x2="143.5" y2="181.5"/><line x1="51.5" y1="190.1" x2="56.5" y2="181.5"/>
+          <line x1="9.9" y1="148.5" x2="18.5" y2="143.5"/><line x1="9.9" y1="51.5" x2="18.5" y2="56.5"/>
+        </g>
+        <text x="100" y="30" text-anchor="middle" font-family="DM Sans" font-size="13" font-weight="600" fill="#fff" letter-spacing="2">N</text>
+        <text x="100" y="178" text-anchor="middle" font-family="DM Sans" font-size="11" fill="rgba(255,255,255,0.6)">S</text>
+        <text x="172" y="105" text-anchor="middle" font-family="DM Sans" font-size="11" fill="rgba(255,255,255,0.6)">E</text>
+        <text x="28" y="105" text-anchor="middle" font-family="DM Sans" font-size="11" fill="rgba(255,255,255,0.6)">W</text>
+        <polygon points="100,22 106,100 100,94 94,100" fill="#e8c07d"/>
+        <polygon points="100,178 106,100 100,106 94,100" fill="rgba(255,255,255,0.4)"/>
+        <circle cx="100" cy="100" r="8" fill="#0d3a5c"/>
+        <circle cx="100" cy="100" r="5" fill="#e8c07d"/>
+        <circle cx="100" cy="100" r="2" fill="#0d3a5c"/>
+      </svg>
+    </div>
+
+    <div class="splash-text">
+      <p class="splash-eyebrow">Cebu, Philippines</p>
+      <h1 class="splash-title" id="splashTitle">
+        <span class="splash-letter" style="--i:0">B</span><span class="splash-letter" style="--i:1">A</span><span class="splash-letter" style="--i:2">N</span><span class="splash-letter" style="--i:3">T</span><span class="splash-letter" style="--i:4">A</span><span class="splash-letter" style="--i:5">Y</span><span class="splash-letter" style="--i:6">A</span><span class="splash-letter" style="--i:7">N</span>
+        <span class="splash-space"> </span>
+        <span class="splash-letter" style="--i:9">I</span><span class="splash-letter" style="--i:10">S</span><span class="splash-letter" style="--i:11">L</span><span class="splash-letter" style="--i:12">A</span><span class="splash-letter" style="--i:13">N</span><span class="splash-letter" style="--i:14">D</span>
+      </h1>
+      <p class="splash-sub">Travel Guide</p>
+    </div>
+
+    <div class="splash-icons">
+      <div class="splash-icon-item" style="--d:0.2s">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22C6.5 17 2 13.5 2 9a10 10 0 0 1 20 0c0 4.5-4.5 8-10 13z"/><circle cx="12" cy="9" r="3"/></svg>
+      </div>
+      <div class="splash-icon-item" style="--d:0.4s">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+      </div>
+      <div class="splash-icon-item" style="--d:0.6s">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20a2.4 2.4 0 0 0 2 1 2.4 2.4 0 0 0 2-1 2.4 2.4 0 0 1 2-1 2.4 2.4 0 0 1 2 1 2.4 2.4 0 0 0 2 1 2.4 2.4 0 0 0 2-1 2.4 2.4 0 0 1 2-1 2.4 2.4 0 0 1 2 1"/><path d="M4 18V12a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6"/><path d="M8 12V8a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v4"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="splash-progress"><div class="splash-progress-bar" id="splashBar"></div></div>
+</div>
+
+<!-- ════════════════════════════════════════
+     TOAST NOTIFICATION
+════════════════════════════════════════ -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- ════════════════════════════════════════
+     MAIN APP
+════════════════════════════════════════ -->
+<div class="app" id="app" aria-hidden="true">
+
+  <!-- TOP BAR -->
+  <header class="topbar" id="topbar">
+    <div class="topbar-brand">
+      <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="12" cy="12" r="10"/>
+        <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+      </svg>
+      <span class="brand-name">Bantayan Island Travel Guide</span>
+    </div>
+    <button class="topbar-trips-btn" id="topbarTripsBtn" aria-label="View My Trip">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+        <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+        <line x1="12" y1="12" x2="12" y2="16"/>
+        <line x1="10" y1="14" x2="14" y2="14"/>
+      </svg>
+      <span class="trips-label">My Trip</span>
+      <span class="trips-badge" id="tripsBadge" aria-live="polite">0</span>
+    </button>
+  </header>
+
+  <!-- ════════ TAB PANELS ════════ -->
+  <main class="content-area">
+
+    <!-- ── EXPLORE ── -->
+    <section class="tab-panel active" id="tab-explore">
+      <div class="hero-explore">
+        <img class="hero-bg"
+          src="https://commons.wikimedia.org/wiki/Special:FilePath/A%20Panoramic%20view%20of%20Bantayan.jpg"
+          alt="Panoramic view of Bantayan Island"
+          onerror="this.style.display='none'">
+        <div class="hero-scrim"></div>
+        <div class="hero-content">
+          <p class="eyebrow white-eyebrow">Cebu · Philippines</p>
+          <h1>Bantayan Island Travel Guide</h1>
+          <p class="hero-sub">Three towns. One paradise. Crystal water, white sand, and stories worth finding.</p>
+          <div class="hero-actions">
+            <button class="hero-btn" onclick="switchTab('places')">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              Browse Places
+            </button>
+            <button class="hero-btn hero-btn-ghost" onclick="switchTab('ferry')">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20a2.4 2.4 0 0 0 2 1 2.4 2.4 0 0 0 2-1 2.4 2.4 0 0 1 2-1 2.4 2.4 0 0 1 2 1 2.4 2.4 0 0 0 2 1 2.4 2.4 0 0 0 2-1 2.4 2.4 0 0 1 2-1 2.4 2.4 0 0 1 2 1"/><path d="M4 18V12a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6"/><path d="M8 12V8a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v4"/></svg>
+              Ferry Times
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STAT BAR -->
+      <div class="stat-bar">
+        <div class="stat-item">
+          <span class="stat-num">3</span>
+          <span class="stat-label">Towns</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">49</span>
+          <span class="stat-label">Barangays</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">~1 hr</span>
+          <span class="stat-label">Ferry</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">Dec–Apr</span>
+          <span class="stat-label">Best Season</span>
+        </div>
+      </div>
+
+      <!-- MAP SECTION -->
+      <div class="section map-section">
+        <div class="section-head">
+          <p class="eyebrow">Orientation</p>
+          <h2>Map of Bantayan Island</h2>
+          <p class="section-desc">Three municipalities — tap any region to explore its highlights.</p>
+        </div>
+
+        <div class="map-wrap">
+          <svg id="islandMap" class="island-map" viewBox="0 0 480 560" xmlns="http://www.w3.org/2000/svg">
+            <rect width="480" height="560" fill="#d4eef7"/>
+            <g fill="none" stroke="#bde0f0" stroke-width="0.5" opacity="0.6">
+              <path d="M0 80 Q60 70 120 80 Q180 90 240 80 Q300 70 360 80 Q420 90 480 80"/>
+              <path d="M0 130 Q60 120 120 130 Q180 140 240 130 Q300 120 360 130 Q420 140 480 130"/>
+              <path d="M0 480 Q60 470 120 480 Q180 490 240 480 Q300 470 360 480 Q420 490 480 480"/>
+              <path d="M0 510 Q60 500 120 510 Q180 520 240 510 Q300 500 360 510 Q420 520 480 510"/>
+            </g>
+            <!-- MADRIDEJOS -->
+            <path id="zone-madridejos" class="map-zone zone-madridejos" d="M 190 60 Q 210 40 240 35 Q 265 30 285 45 Q 310 55 320 75 Q 330 95 325 115 Q 318 130 300 140 Q 280 150 260 148 Q 240 148 220 145 Q 200 140 188 125 Q 175 108 178 88 Z"/>
+            <!-- BANTAYAN TOWN -->
+            <path id="zone-bantayan" class="map-zone zone-bantayan" d="M 165 200 Q 180 175 205 165 Q 230 155 255 158 Q 278 160 298 170 Q 318 182 325 200 Q 332 220 328 242 Q 322 262 305 274 Q 285 285 260 285 Q 235 285 215 275 Q 195 264 183 244 Q 170 222 165 200 Z"/>
+            <!-- SANTA FE -->
+            <path id="zone-santafe" class="map-zone zone-santafe" d="M 175 355 Q 188 330 210 318 Q 235 306 258 308 Q 280 310 298 322 Q 316 336 320 355 Q 325 375 318 396 Q 310 416 292 428 Q 272 440 248 440 Q 224 440 206 428 Q 188 416 180 396 Q 172 375 175 355 Z"/>
+            <!-- Connectors -->
+            <path class="island-land" d="M 220 145 Q 200 160 188 175 Q 178 188 178 200 Q 178 210 180 220 Q 175 230 173 242 Q 170 255 173 270 Q 176 282 182 293 Q 187 305 192 318 Q 195 325 198 330 Q 194 342 190 355 Q 185 368 183 382 M 300 140 Q 310 155 315 168 Q 320 182 322 198 Q 325 215 325 232 Q 325 250 322 265 Q 318 280 312 292 Q 306 306 298 318 Q 296 326 300 338 Q 305 350 310 362 Q 316 375 318 390" fill="none" stroke="#b8d4c8" stroke-width="18" stroke-linecap="round"/>
+            <!-- Labels -->
+            <text x="255" y="96" class="map-label" text-anchor="middle">MADRIDEJOS</text>
+            <text x="255" y="112" class="map-sublabel" text-anchor="middle">North · 14 barangays</text>
+            <text x="248" y="226" class="map-label" text-anchor="middle">BANTAYAN</text>
+            <text x="248" y="242" class="map-sublabel" text-anchor="middle">Center · 25 barangays</text>
+            <text x="248" y="374" class="map-label" text-anchor="middle">SANTA FE</text>
+            <text x="248" y="390" class="map-sublabel" text-anchor="middle">Southeast · 10 barangays</text>
+            <!-- Pins -->
+            <g class="map-pin" id="pin-port" transform="translate(316,415)">
+              <circle r="11" fill="rgba(255,255,255,0.95)" stroke="#1a5f7a" stroke-width="1.5"/>
+              <path d="M0,-4 L0,4 M-3,-1 L3,-1 M-2,4 Q-3,2 0,2 Q3,2 2,4" fill="none" stroke="#1a5f7a" stroke-width="1.2" stroke-linecap="round"/>
+            </g>
+            <text x="332" y="420" class="pin-label">Port</text>
+            <g class="map-pin" id="pin-airport" transform="translate(175,395)">
+              <circle r="11" fill="rgba(255,255,255,0.95)" stroke="#4a7c94" stroke-width="1.5"/>
+              <path d="M0,-5 L0,5 M-5,0 L5,0 M-3,3 L3,3" fill="none" stroke="#4a7c94" stroke-width="1.2" stroke-linecap="round"/>
+            </g>
+            <text x="127" y="400" class="pin-label">Airport</text>
+            <g class="map-pin" id="pin-kota" transform="translate(165,340)">
+              <circle r="11" fill="rgba(255,255,255,0.95)" stroke="#0d9488" stroke-width="1.5"/>
+              <path d="M-4,2 Q0,-4 4,2" fill="none" stroke="#0d9488" stroke-width="1.2" stroke-linecap="round"/>
+              <line x1="-5" y1="3" x2="5" y2="3" stroke="#0d9488" stroke-width="1.2"/>
+            </g>
+            <text x="125" y="345" class="pin-label">Kota</text>
+            <g class="map-pin" id="pin-church" transform="translate(316,225)">
+              <circle r="11" fill="rgba(255,255,255,0.95)" stroke="#7c3aed" stroke-width="1.5"/>
+              <rect x="-3" y="-1" width="6" height="5" fill="none" stroke="#7c3aed" stroke-width="1.1"/>
+              <line x1="0" y1="-5" x2="0" y2="-1" stroke="#7c3aed" stroke-width="1.2"/>
+              <line x1="-2" y1="-3" x2="2" y2="-3" stroke="#7c3aed" stroke-width="1.2"/>
+            </g>
+            <text x="330" y="230" class="pin-label">Church</text>
+            <g class="map-pin" id="pin-mangrove" transform="translate(165,242)">
+              <circle r="11" fill="rgba(255,255,255,0.95)" stroke="#16a34a" stroke-width="1.5"/>
+              <path d="M0,4 L0,-2 M-3,-2 Q0,-6 3,-2 M-4,0 Q-2,-3 0,-1 M4,0 Q2,-3 0,-1" fill="none" stroke="#16a34a" stroke-width="1.1" stroke-linecap="round"/>
+            </g>
+            <text x="108" y="247" class="pin-label">Mangrove</text>
+            <g class="map-pin" id="pin-fort" transform="translate(285,78)">
+              <circle r="11" fill="rgba(255,255,255,0.95)" stroke="#b45309" stroke-width="1.5"/>
+              <rect x="-4" y="-4" width="8" height="7" fill="none" stroke="#b45309" stroke-width="1.1"/>
+              <rect x="-2" y="-6" width="2" height="3" fill="none" stroke="#b45309" stroke-width="1"/>
+              <rect x="1" y="-6" width="2" height="3" fill="none" stroke="#b45309" stroke-width="1"/>
+            </g>
+            <text x="298" y="83" class="pin-label">Fort</text>
+            <!-- Compass rose -->
+            <g transform="translate(430,520)">
+              <circle r="20" fill="rgba(255,255,255,0.75)" stroke="#1a5f7a" stroke-width="0.8"/>
+              <polygon points="0,-16 2,-2 0,2 -2,-2" fill="#e8c07d"/>
+              <polygon points="0,16 2,2 0,-2 -2,2" fill="rgba(30,60,80,0.35)"/>
+              <polygon points="16,0 2,2 -2,2 2,-2" fill="rgba(30,60,80,0.35)"/>
+              <polygon points="-16,0 -2,2 2,2 -2,-2" fill="rgba(30,60,80,0.35)"/>
+              <circle r="3" fill="#1a5f7a"/>
+              <text y="-20" text-anchor="middle" font-size="7" font-family="DM Sans" font-weight="700" fill="#1a5f7a">N</text>
+            </g>
+            <!-- Scale -->
+            <g transform="translate(20,535)">
+              <line x1="0" y1="0" x2="50" y2="0" stroke="#1a5f7a" stroke-width="1.5"/>
+              <line x1="0" y1="-3" x2="0" y2="3" stroke="#1a5f7a" stroke-width="1.5"/>
+              <line x1="50" y1="-3" x2="50" y2="3" stroke="#1a5f7a" stroke-width="1.5"/>
+              <text x="25" y="-6" text-anchor="middle" font-size="8" font-family="DM Sans" fill="#1a5f7a">~10 km</text>
+            </g>
+          </svg>
+
+          <!-- Map info panel -->
+          <div class="map-panel" id="mapPanel">
+            <button class="map-panel-back" id="mapPanelClose" aria-label="Close panel">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="19" y1="12" x2="5" y2="12"/>
+                <polyline points="12 19 5 12 12 5"/>
+              </svg>
+              Back
+            </button>
+            <div class="map-panel-inner" id="mapPanelInner"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUICK LINKS -->
+      <div class="section quick-section">
+        <div class="section-head">
+          <p class="eyebrow">Quick Start</p>
+          <h2>Plan Your Visit</h2>
+        </div>
+        <div class="quick-grid">
+          <button class="quick-card" onclick="switchTab('places')">
+            <div class="quick-icon qc-teal">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <span class="quick-label">Places</span>
+            <span class="quick-sub">16 destinations</span>
+          </button>
+          <button class="quick-card" onclick="switchTab('trips')">
+            <div class="quick-icon qc-sand">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+            </div>
+            <span class="quick-label">My Trip</span>
+            <span class="quick-sub">Planner + budget</span>
+          </button>
+          <button class="quick-card" onclick="switchTab('ferry')">
+            <div class="quick-icon qc-blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20a2.4 2.4 0 0 0 2 1 2.4 2.4 0 0 0 2-1 2.4 2.4 0 0 1 2-1 2.4 2.4 0 0 1 2 1 2.4 2.4 0 0 0 2 1 2.4 2.4 0 0 0 2-1 2.4 2.4 0 0 1 2-1 2.4 2.4 0 0 1 2 1"/><path d="M4 18V12a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6"/><path d="M8 12V8a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v4"/></svg>
+            </div>
+            <span class="quick-label">Ferry</span>
+            <span class="quick-sub">Schedule &amp; fares</span>
+          </button>
+          <button class="quick-card" onclick="openMoreDrawer('compass')">
+            <div class="quick-icon qc-coral">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+            </div>
+            <span class="quick-label">Compass</span>
+            <span class="quick-sub">Live heading</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PLACES ── -->
+    <section class="tab-panel" id="tab-places">
+      <div class="section">
+        <div class="section-head">
+          <p class="eyebrow">Where to Go</p>
+          <h2>Places on Bantayan Island</h2>
+          <p class="section-desc">Tap any card to see full details and add to your trip.</p>
+        </div>
+        <div class="filter-row" id="filterRow">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="Santa Fe">Santa Fe</button>
+          <button class="filter-btn" data-filter="Bantayan Town">Bantayan Town</button>
+          <button class="filter-btn" data-filter="Madridejos">Madridejos</button>
+          <button class="filter-btn" data-filter="Island Hopping">Island Hopping</button>
+        </div>
+        <div class="places-grid" id="placesGrid"></div>
+      </div>
+    </section>
+
+    <!-- ── TRIPS ── -->
+    <section class="tab-panel" id="tab-trips">
+      <div class="section">
+        <div class="section-head">
+          <p class="eyebrow">Trip Planner</p>
+          <h2>My Itinerary</h2>
+          <p class="section-desc">Add as many days as your trip needs. Your plan is saved automatically on this device.</p>
+        </div>
+
+        <!-- Add form -->
+        <div class="planner-add-card">
+          <h3 class="add-card-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+            Add a Destination
+          </h3>
+          <div class="planner-form-row">
+            <div class="planner-field">
+              <label for="placeSelect">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Place
+              </label>
+              <select id="placeSelect" class="planner-select">
+                <option value="">Choose a destination...</option>
+                <optgroup label="Santa Fe">
+                  <option value="Sugar Beach|Santa Fe">Sugar Beach</option>
+                  <option value="Kota Beach|Santa Fe">Kota Beach</option>
+                  <option value="Ogtong Cave Pool|Santa Fe">Ogtong Cave Pool</option>
+                  <option value="Paradise Beach|Santa Fe">Paradise Beach</option>
+                  <option value="Santa Fe Marine Sanctuary|Santa Fe">Marine Sanctuary</option>
+                  <option value="MJ Square Food Hub|Santa Fe">MJ Square Food Hub</option>
+                </optgroup>
+                <optgroup label="Bantayan Town">
+                  <option value="Saints Peter and Paul Church|Bantayan Town">Saints Peter &amp; Paul Church</option>
+                  <option value="Downtown Public Market|Bantayan Town">Public Market</option>
+                  <option value="Tablayan Beach|Bantayan Town">Tablayan Beach</option>
+                  <option value="Obo-ob Mangrove Eco Park|Bantayan Town">Obo-ob Mangrove</option>
+                </optgroup>
+                <optgroup label="Madridejos">
+                  <option value="Kota Park Fort Ruins|Madridejos">Kota Park Fort Ruins</option>
+                  <option value="Lawis Bay|Madridejos">Lawis Bay</option>
+                </optgroup>
+                <optgroup label="Island Hopping">
+                  <option value="Virgin Island (Silion)|Island Hopping">Virgin Island (Silion)</option>
+                  <option value="Hilantagaan Island|Island Hopping">Hilantagaan Island</option>
+                  <option value="Botigues Island|Island Hopping">Botigues Island</option>
+                  <option value="Polo-polo Island|Island Hopping">Polo-polo Island</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="planner-field planner-field-day">
+              <label for="daySelect">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Day
+              </label>
+              <select id="daySelect" class="planner-select"></select>
+            </div>
+          </div>
+          <button id="addTripBtn" class="btn-add-trip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add to Itinerary
+          </button>
+        </div>
+
+        <!-- Day tabs (rendered dynamically, unlimited days) -->
+        <div class="day-tabs" id="dayTabs"></div>
+
+        <div class="planner-actions" style="margin:0 0 1.1rem">
+          <button class="btn-ghost" id="addDayBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add Another Day
+          </button>
+          <button class="btn-ghost" id="removeDayBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Remove Last Day
+          </button>
+        </div>
+
+        <div id="itineraryDays"></div>
+
+        <div class="planner-actions">
+          <button class="btn-ghost" id="clearAllBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>
+            Clear All Days
+          </button>
+        </div>
+
+        <!-- Budget mini -->
+        <div class="budget-mini-card">
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            Budget Estimator
+          </h3>
+          <p>Get a quick cost breakdown for your trip.</p>
+          <button class="btn-ghost" onclick="openMoreDrawer('budget')">Open Budget Tool</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FERRY ── -->
+    <section class="tab-panel" id="tab-ferry">
+      <div class="section">
+        <div class="section-head">
+          <p class="eyebrow">Getting There</p>
+          <h2>Hagnaya – Santa Fe Ferry</h2>
+          <p class="section-desc">Approximate schedule. Sea conditions may affect departures — always confirm at the port.</p>
+        </div>
+
+        <div class="ferry-notice">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          Confirm schedules at the port before traveling. Rough seas may cancel crossings.
+        </div>
+
+        <div class="ferry-cols">
+          <div class="ferry-col">
+            <div class="ferry-col-head">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              Hagnaya → Santa Fe
+            </div>
+            <div class="ferry-schedule-list">
+              <div class="ferry-row"><span class="ferry-time">5:00 AM</span><span class="ferry-dur">~1 – 1.5 hrs</span></div>
+              <div class="ferry-row"><span class="ferry-time">7:00 AM</span><span class="ferry-dur">~1 – 1.5 hrs</span></div>
+              <div class="ferry-row"><span class="ferry-time">9:00 AM</span><span class="ferry-dur">~1 – 1.5 hrs</span></div>
+              <div class="ferry-row"><span class="ferry-time">11:00 AM</span><span class="ferry-dur">~1 – 1.5 hrs</span></div>
+              <div class="ferry-row"><span class="ferry-time">1:00 PM</span><span class="ferry-dur">~1 – 1.5 hrs</span></div>
+              <div class="ferry-row"><span class="ferry-time">3:00 PM</span><span class="ferry-dur">~1 – 1.5 hrs</span></div>
+            </div>
+          </div>
+          <div class="ferry-col">
+            <div class="ferry-col-head return">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+              Santa Fe → Hagnaya
+            </div>
+            <div class="ferry-schedule-list">
+              <div class="ferry-row"><span class="ferry-time">6:00 AM</span><span class="ferry-dur">~1 – 1.5 hrs</span></div>
+              <div class="ferry-row"><span class="ferry-time">8:00 AM</span><span class="ferry-dur">~1 – 1.5 hrs</span></div>
+              <div class="ferry-row"><span class="ferry-time">10:00 AM</span><span class="ferry-dur">~1 – 1.5 hrs</span></div>
+              <div class="ferry-row"><span class="ferry-time">2:00 PM</span><span class="ferry-dur">~1 – 1.5 hrs</span></div>
+              <div class="ferry-row"><span class="ferry-time">4:00 PM</span><span class="ferry-dur">~1 – 1.5 hrs</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ferry-fare">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Fare: approximately <strong>₱300</strong> per passenger. Direct buses from Cebu City North Terminal that drive onto the ferry are also available.
+        </div>
+
+        <div class="section-head" style="margin-top:2.5rem">
+          <p class="eyebrow">Access Points</p>
+          <h2>Port &amp; Airport</h2>
+        </div>
+        <div class="access-cards">
+          <div class="access-card">
+            <div class="access-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20a2.4 2.4 0 0 0 2 1 2.4 2.4 0 0 0 2-1 2.4 2.4 0 0 1 2-1 2.4 2.4 0 0 1 2 1 2.4 2.4 0 0 0 2 1 2.4 2.4 0 0 0 2-1 2.4 2.4 0 0 1 2-1 2.4 2.4 0 0 1 2 1"/><path d="M4 18V12a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6"/><path d="M8 12V8a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v4"/><path d="M12 6V3"/><path d="M10 3h4"/></svg>
+            </div>
+            <h3>Santa Fe Port</h3>
+            <p>The island's main seaport, receiving RoRo ferries from Hagnaya Port in San Remigio, Cebu.</p>
+          </div>
+          <div class="access-card">
+            <div class="access-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21 4 19 2c-2-2-4-2-5.5-.5l-7 7C4 9.5 3 11.3 3 13v.3L1.4 15c-.5.6-.5 1.4 0 1.9l.4.4 2.2.4.4 2.2.4.4c.6.5 1.4.5 2 0L8.5 19H9c1.7 0 3.5-1 5-2.5l3.5-3.5-6-1.8"/></svg>
+            </div>
+            <h3>Bantayan Airport (RPSB)</h3>
+            <p>Small community airport in Santa Fe. Limited scheduled flights to Mactan-Cebu. Most visitors arrive by ferry.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FOOD ── -->
+    <section class="tab-panel" id="tab-food">
+      <div class="section">
+        <div class="section-head">
+          <p class="eyebrow">Eat &amp; Drink</p>
+          <h2>What to Eat in Bantayan</h2>
+          <p class="section-desc">Fresh seafood, island specialties, and a unique Lenten tradition.</p>
+        </div>
+
+        <div class="food-grid">
+          <div class="food-card">
+            <div class="food-icon fi-orange">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10"/><path d="M12 6v6l4 2"/><path d="M16 2l2 2-2 2"/><path d="M22 2l-2 2 2 2"/></svg>
+            </div>
+            <div class="food-card-body">
+              <h3>Danggit — Dried Fish</h3>
+              <p>Bantayan is island-wide famous for danggit — dried rabbitfish sold at the public market. The island's signature pasalubong.</p>
+              <span class="place-tag">Market Find</span>
+            </div>
+          </div>
+          <div class="food-card">
+            <div class="food-icon fi-teal">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+            </div>
+            <div class="food-card-body">
+              <h3>SuTuKil Seafood</h3>
+              <p>Fresh catch prepared three Visayan ways — sugba (grilled), tuwa (boiled in broth), kilaw (raw, vinegar-marinated).</p>
+              <span class="place-tag">Beachfront Eateries</span>
+            </div>
+          </div>
+          <div class="food-card">
+            <div class="food-icon fi-red">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            </div>
+            <div class="food-card-body">
+              <h3>Holy Week Lechon</h3>
+              <p>Known as "Lenten Capital of the Visayas." Locals roast whole lechon during Holy Week — a beloved tradition unique to the island.</p>
+              <span class="place-tag">Seasonal Tradition</span>
+            </div>
+          </div>
+          <div class="food-card">
+            <div class="food-icon fi-blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="food-card-body">
+              <h3>MJ Square Food Hub</h3>
+              <p>Santa Fe's main food strip — eat-all-you-can seafood, grilled fish, cocktails, and casual international fare. The social heart of tourist Bantayan.</p>
+              <span class="place-tag">Santa Fe</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-head" style="margin-top:3rem">
+          <p class="eyebrow">Before You Go</p>
+          <h2>Travel Tips</h2>
+          <p class="section-desc">Tap each tip to expand.</p>
+        </div>
+        <div class="accordion" id="tipsAccordion">
+          <div class="acc-item">
+            <button class="acc-trigger" aria-expanded="false">
+              <span class="acc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
+              Best Time to Visit
+              <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="acc-body"><p>Dry season from December to April brings calm seas, clear skies, and the best swimming conditions. Holy Week (March or April) is the island's busiest period — book accommodation weeks in advance. The island is quieter and more affordable outside of Holy Week.</p></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger" aria-expanded="false">
+              <span class="acc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></span>
+              Getting Around the Island
+              <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="acc-body"><p>Tricycles operate within each town. Habal-habal (motorcycle taxis) cover beach-to-beach routes. For maximum freedom, rent a motorbike — ₱350 to ₱500 per day — and explore all three towns at your own pace. The main road runs north-south connecting Santa Fe, Bantayan town, and Madridejos.</p></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger" aria-expanded="false">
+              <span class="acc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+              Rainy Season Warning
+              <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="acc-body"><p>May through November is the wet season. Seas can become rough and ferry schedules may be disrupted. Always build in an extra buffer day — you may find yourself stranded due to cancelled crossings.</p></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger" aria-expanded="false">
+              <span class="acc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+              The Three Towns Explained
+              <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="acc-body"><p><strong>Santa Fe</strong> — The tourism gateway. Ferry port, most resorts, beach bars, and restaurants are here. <strong>Bantayan Town</strong> — Cultural heart: oldest church, public market, mangrove park. <strong>Madridejos</strong> — The north's quiet edge: Kota Park fort ruins, Lawis Bay shellfish flats, and a slower pace.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── COMPASS ── -->
+    <section class="tab-panel" id="tab-compass">
+      <div class="section compass-section">
+        <div class="section-head">
+          <p class="eyebrow">Device Compass</p>
+          <h2>Navigate Bantayan Island</h2>
+          <p class="section-desc">Uses your device's orientation sensor to show real-time heading.</p>
+        </div>
+
+        <div class="compass-wrap">
+          <div class="compass-outer">
+            <svg id="compassSvg" class="compass-main-svg" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="bezelGrad" cx="50%" cy="50%">
+                  <stop offset="0%" stop-color="#1a3a5c"/>
+                  <stop offset="100%" stop-color="#0d2438"/>
+                </radialGradient>
+                <radialGradient id="centerGrad" cx="40%" cy="35%">
+                  <stop offset="0%" stop-color="#2d7fbf"/>
+                  <stop offset="100%" stop-color="#0d3a5c"/>
+                </radialGradient>
+              </defs>
+              <circle cx="150" cy="150" r="148" fill="url(#bezelGrad)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+              <circle cx="150" cy="150" r="130" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+              <g id="needleGroup" transform-origin="150 150">
+                <text x="150" y="38" text-anchor="middle" font-family="DM Sans" font-size="14" font-weight="700" fill="#e8c07d">N</text>
+                <text x="150" y="270" text-anchor="middle" font-family="DM Sans" font-size="11" fill="rgba(255,255,255,0.5)">S</text>
+                <text x="265" y="155" text-anchor="middle" font-family="DM Sans" font-size="11" fill="rgba(255,255,255,0.5)">E</text>
+                <text x="35" y="155" text-anchor="middle" font-family="DM Sans" font-size="11" fill="rgba(255,255,255,0.5)">W</text>
+                <text x="64" y="72" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(255,255,255,0.3)">NW</text>
+                <text x="236" y="72" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(255,255,255,0.3)">NE</text>
+                <text x="64" y="236" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(255,255,255,0.3)">SW</text>
+                <text x="236" y="236" text-anchor="middle" font-family="DM Sans" font-size="9" fill="rgba(255,255,255,0.3)">SE</text>
+                <polygon points="150,52 155,150 150,140 145,150" fill="#e8c07d"/>
+                <polygon points="150,248 155,150 150,160 145,150" fill="rgba(255,255,255,0.35)"/>
+                <polygon points="248,150 150,145 160,150 150,155" fill="rgba(255,255,255,0.25)"/>
+                <polygon points="52,150 150,145 140,150 150,155" fill="rgba(255,255,255,0.25)"/>
+              </g>
+              <circle cx="150" cy="150" r="20" fill="url(#centerGrad)"/>
+              <circle cx="150" cy="150" r="8" fill="#e8c07d"/>
+              <circle cx="150" cy="150" r="4" fill="#1a3a5c"/>
+              <circle cx="148" cy="148" r="1.5" fill="rgba(255,255,255,0.5)"/>
+              <polygon points="150,4 153,15 147,15" fill="#e8c07d"/>
+            </svg>
+          </div>
+          <div class="compass-readout">
+            <div class="compass-heading" id="compassHeading">-- °</div>
+            <div class="compass-dir" id="compassDir">Waiting for sensor...</div>
+          </div>
+          <div class="compass-permission" id="compassPermission">
+            <button class="btn-primary" id="compassPermBtn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+              Enable Compass
+            </button>
+            <p class="compass-hint" id="compassHint">Tap to request device orientation access</p>
+          </div>
+        </div>
+
+        <div class="section-head" style="margin-top:2.5rem">
+          <p class="eyebrow">Landmarks</p>
+          <h2>Directions from Santa Fe Port</h2>
+        </div>
+        <div class="landmark-list">
+          <div class="landmark-item">
+            <div class="landmark-dir dir-here"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+            <div class="landmark-info"><strong>Santa Fe Port</strong><span>You are here · Ferry arrival &amp; departure</span></div>
+          </div>
+          <div class="landmark-item"><div class="landmark-dir">NW</div><div class="landmark-info"><strong>Kota Beach</strong><span>~2 km northwest of the port</span></div></div>
+          <div class="landmark-item"><div class="landmark-dir">NW</div><div class="landmark-info"><strong>Bantayan Town</strong><span>~12 km northwest via main road</span></div></div>
+          <div class="landmark-item"><div class="landmark-dir">N</div><div class="landmark-info"><strong>Madridejos</strong><span>~22 km north, northernmost town</span></div></div>
+          <div class="landmark-item"><div class="landmark-dir">NE</div><div class="landmark-info"><strong>Hilantagaan Island</strong><span>~20 min boat ride northeast</span></div></div>
+          <div class="landmark-item"><div class="landmark-dir">N</div><div class="landmark-info"><strong>Virgin Island</strong><span>North of Bantayan town by boat</span></div></div>
+          <div class="landmark-item"><div class="landmark-dir">NW</div><div class="landmark-info"><strong>Bantayan Airport (RPSB)</strong><span>~3 km northwest of the port</span></div></div>
+          <div class="landmark-item"><div class="landmark-dir">W</div><div class="landmark-info"><strong>Obo-ob Mangrove Eco Park</strong><span>West side of Bantayan town</span></div></div>
+          <div class="landmark-item"><div class="landmark-dir">N</div><div class="landmark-info"><strong>Kota Park Fort Ruins</strong><span>Northern coast, Madridejos</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── BUDGET ── -->
+    <section class="tab-panel" id="tab-budget">
+      <div class="section">
+        <div class="section-head">
+          <p class="eyebrow">Plan Your Budget</p>
+          <h2>Trip Budget Estimator</h2>
+          <p class="section-desc">Get a rough estimate based on your trip length and travel style.</p>
+        </div>
+        <div class="budget-panel">
+          <div class="budget-form">
+            <div class="budget-field">
+              <label for="budgetDays">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Number of Days
+              </label>
+              <input type="number" id="budgetDays" min="1" max="30" value="2" class="budget-input">
+            </div>
+            <div class="budget-field">
+              <label for="budgetPeople">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                Number of People
+              </label>
+              <input type="number" id="budgetPeople" min="1" max="20" value="2" class="budget-input">
+            </div>
+            <div class="budget-field">
+              <label for="budgetStyle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                Travel Style
+              </label>
+              <select id="budgetStyle" class="budget-select">
+                <option value="700">Budget — ₱700/day/person</option>
+                <option value="1500" selected>Mid-Range — ₱1,500/day/person</option>
+                <option value="3000">Comfort — ₱3,000/day/person</option>
+              </select>
+            </div>
+            <button id="calcBtn" class="btn-primary budget-calc-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+              Calculate Budget
+            </button>
+          </div>
+          <div class="budget-result" id="budgetResult">
+            <p class="budget-label">Estimated Total</p>
+            <p class="budget-value" id="budgetValue">₱0</p>
+            <p class="budget-note">Accommodation, food &amp; local transport per day. Ferry and activity fees shown below.</p>
+            <div class="budget-breakdown" id="budgetBreakdown"></div>
+          </div>
+        </div>
+        <div class="budget-tips">
+          <div class="budget-tip-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20a2.4 2.4 0 0 0 2 1 2.4 2.4 0 0 0 2-1 2.4 2.4 0 0 1 2-1 2.4 2.4 0 0 1 2 1 2.4 2.4 0 0 0 2 1 2.4 2.4 0 0 0 2-1 2.4 2.4 0 0 1 2-1 2.4 2.4 0 0 1 2 1"/><path d="M4 18V12a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6"/><path d="M8 12V8a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v4"/></svg><div><strong>Ferry</strong><br>Add ₱300/person each way (×2 for round trip)</div></div>
+          <div class="budget-tip-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg><div><strong>Motorbike Rental</strong><br>₱350–500/day to explore all three towns</div></div>
+          <div class="budget-tip-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div><strong>Island Hopping</strong><br>₱500–800 per boat for a day tour</div></div>
+          <div class="budget-tip-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg><div><strong>Ogtong Cave</strong><br>Day entrance ~₱100–200 per person</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── GUIDE ── -->
+    <section class="tab-panel" id="tab-guide">
+      <div class="section">
+        <div class="section-head">
+          <p class="eyebrow">Island Guide</p>
+          <h2>Everything About Bantayan</h2>
+          <p class="section-desc">Tap any section to expand.</p>
+        </div>
+        <div class="accordion" id="guideAccordion">
+          <div class="acc-item">
+            <button class="acc-trigger" aria-expanded="false">
+              <span class="acc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
+              About Bantayan Island
+              <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="acc-body"><p>Bantayan Island sits off the northern tip of Cebu, across the Tañon Strait — a quieter, slower alternative to Cebu's more commercial tourist spots. Its three municipalities, Santa Fe, Bantayan, and Madridejos, each hold their own stretch of coastline, fishing villages, and a Spanish-era church at their center.</p><p>The island is particularly known for its white sand beaches, crystal-clear shallow water, island hopping routes, and the unique Holy Week lechon tradition. It gained wider attention after Typhoon Yolanda (Hainan) in 2013 and has since rebuilt its tourism infrastructure while retaining its unhurried character.</p></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger" aria-expanded="false">
+              <span class="acc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>
+              Three Municipalities
+              <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="acc-body"><p><strong>Santa Fe</strong> — The tourism gateway. The ferry port arrives here. Most resorts, beach bars, and restaurants are here. Kota Beach, Ogtong Cave Pool, and MJ Square are all in Santa Fe.</p><p><strong>Bantayan Town</strong> — The cultural and historical center. Home to the centuries-old Saints Peter and Paul Church, the public market, Obo-ob Mangrove Eco Park, and Tablayan Beach.</p><p><strong>Madridejos</strong> — The north's quiet edge. Kota Park holds ruins of a Spanish-era fort and watchtower. Lawis Bay is known for its shellfish-picking tidal flats. The pace is slower and more local.</p></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger" aria-expanded="false">
+              <span class="acc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></span>
+              All 49 Barangays
+              <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="acc-body">
+              <div class="brgy-grid">
+                <div class="brgy-col">
+                  <h4>Santa Fe <span>(10 barangays)</span></h4>
+                  <ul><li>Botigues</li><li>Doong</li><li>Guiwanon</li><li>Hilantagaan</li><li>Kinatarkan</li><li>Langub</li><li>Maricaban</li><li>Okoy</li><li>Poblacion</li><li>Silion</li></ul>
+                </div>
+                <div class="brgy-col">
+                  <h4>Bantayan <span>(25 barangays)</span></h4>
+                  <ul><li>Atop-atop</li><li>Baigad</li><li>Bantigue</li><li>Baod</li><li>Binaobao</li><li>Bobo</li><li>Bulho</li><li>Bunacan</li><li>Dunggoan</li><li>Gawi</li><li>Kabac</li><li>Kabangbang</li><li>Kampingganon</li><li>Kangkaibe</li><li>Lipayran</li><li>Luyongbaybay</li><li>Mojon</li><li>Obo</li><li>Patao</li><li>Putian</li><li>Sillon</li><li>Suba</li><li>Sulangan</li><li>Sungko</li><li>Tamiao</li></ul>
+                </div>
+                <div class="brgy-col">
+                  <h4>Madridejos <span>(14 barangays)</span></h4>
+                  <ul><li>Bunakan</li><li>Kaongkod</li><li>Kodia</li><li>Lanao</li><li>Lawis</li><li>Maalat</li><li>Malbago</li><li>Mancilang</li><li>Pono</li><li>Poblacion</li><li>San Agustin</li><li>Tarong</li><li>Tuburan</li><li>Yolanda</li></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger" aria-expanded="false">
+              <span class="acc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></span>
+              Municipal Leaders (2025–2028)
+              <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="acc-body">
+              <div class="leaders-grid">
+                <div class="leader-card"><div class="leader-muni">Santa Fe</div><h4>Mayor Tamar Espinosa</h4><p class="leader-party">1-Cebu Party · Term 2025–2028</p><p>Elected May 12, 2025 with 11,762 votes. Vice Mayor: Lovely Cabrera (1-Cebu).</p></div>
+                <div class="leader-card"><div class="leader-muni">Bantayan Town</div><h4>Mayor Alex Layese</h4><p class="leader-party">Independent · Term 2025–2028</p><p>Elected May 12, 2025 with 20,625 votes. Vice Mayor: Art Despi (1-Cebu).</p></div>
+                <div class="leader-card"><div class="leader-muni">Madridejos</div><h4>Mayor Romeo Villaceran</h4><p class="leader-party">1-Cebu Party · Term 2025–2028</p><p>Elected May 12, 2025 with 18,460 votes. Vice Mayor: Vincent Villacrucis (1-Cebu).</p></div>
+              </div>
+              <p class="leaders-note">Officials elected in the May 12, 2025 Philippine local elections (2025–2028 term), per official/unofficial election-results reporting (Rappler, GMA News, PeoPlaid). Verify current officers with each municipality's official page or COMELEC before relying on this for official business.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger" aria-expanded="false">
+              <span class="acc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.86 12 19.79 19.79 0 0 1 1.87 3.37 2 2 0 0 1 3.84 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+              Emergency &amp; LGU Contact Numbers
+              <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="acc-body">
+              <p><strong>National Emergency Hotline:</strong> 911</p>
+              <p><strong>Philippine Coast Guard (Cebu):</strong> (032) 254-2793</p>
+              <p><strong>Nearest Hospital:</strong> Bantayan District Hospital, Poblacion, Bantayan Town</p>
+              <p style="margin-top:.75rem"><strong>Santa Fe LGU</strong><br>Municipal Mayor's Office: (032) 517-3124 / 0919 340 4382<br>Sangguniang Bayan: 0910 451 1379 · MDRRMO: 0981 446 7661<br>Municipal Health Office: (032) 438-9067</p>
+              <p style="margin-top:.75rem"><strong>Bantayan LGU</strong><br>Municipal Hall trunkline: (032) 438-9100 (Poblacion, Bantayan)<br>Bantayan Police Station (PNP): (032) 438-9110</p>
+              <p style="margin-top:.75rem"><strong>Madridejos LGU</strong><br>Office of the Municipal Mayor: +63 931-1900-623<br>Office of the Vice Mayor: +63 956-4791-983<br>Police Hotline: 0998-598-6376 · Tel: (032) 439-9196<br>RHU/Medical Hotline: 0919-610-0058 · BFP (Fire): see Municipal Hall directory</p>
+              <p class="leaders-note" style="padding:0">Numbers sourced from each municipality's official e-governance/LGU directory pages and public listings; confirm before relying on them for emergencies, since local office numbers can change.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger" aria-expanded="false">
+              <span class="acc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg></span>
+              Local Laws &amp; Ordinances to Know
+              <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="acc-body">
+              <p><strong>Wilderness Area status:</strong> Bantayan Island was declared a wilderness area under <strong>Presidential Proclamation No. 2151</strong> (Dec. 29, 1981), later modified by <strong>Proclamation No. 902</strong> (1996). This history is why parts of the island have historically had restricted land classification; national legislation has since moved to lift this "wilderness" tag to allow regular land titling.</p>
+              <p><strong>Coastal &amp; marine protection:</strong> Marine sanctuaries such as the Santa Fe Marine Sanctuary are protected under the <strong>Philippine Fisheries Code (RA 8550, as amended by RA 10654)</strong> and municipal fishery ordinances — spearfishing, dynamite/cyanide fishing, and taking coral or shells from sanctuary zones are prohibited.</p>
+              <p><strong>Wildlife protection:</strong> The <strong>Wildlife Resources Conservation and Protection Act (RA 9147)</strong> prohibits harming or collecting protected marine species (e.g., turtles, certain shells) found around the island's reefs and mangroves.</p>
+              <p><strong>Solid waste &amp; single-use plastic:</strong> Under the <strong>Ecological Solid Waste Management Act (RA 9003)</strong> and local municipal ordinances (mirroring province-wide plastic-reduction measures in Cebu), single-use plastic bags and littering on beaches are restricted and may carry fines.</p>
+              <p><strong>Local government authority:</strong> Santa Fe, Bantayan, and Madridejos each operate under the <strong>Local Government Code of 1991 (RA 7160)</strong>, which is why each municipality issues its own tourism, business-permit, and environmental ordinances — always check for posted local rules at beaches, resorts, and heritage sites like Kota Park and the Bantayan Church.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger" aria-expanded="false">
+              <span class="acc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+              Responsible Travel
+              <svg class="acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="acc-body"><p>Use reef-safe sunscreen at all marine areas. Carry your own reusable bags and water bottles — single-use plastic is increasingly restricted across Cebu's islands. Do not remove coral, shells, or any marine life. Treat shellfish-picking sites at Lawis Bay with respect — this is a daily livelihood, not a tourist attraction. Dispose of all waste properly; littering on beaches carries fines.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CREDITS ── -->
+    <section class="tab-panel" id="tab-credits">
+      <div class="section">
+        <div class="section-head">
+          <p class="eyebrow">About This App</p>
+          <h2>Developer Credit</h2>
+        </div>
+        <div class="dev-card">
+          <img class="dev-photo" src="https://s6.imgcdn.dev/YFCTg9.jpg" alt="Vernie A. Esgana" loading="lazy">
+          <div class="dev-info">
+            <h3>Vernie A. Esgana</h3>
+            <p class="dev-role">BSIT 3 NORTH</p>
+            <p class="dev-desc">Designed and developed the Bantayan Island Travel Guide app.</p>
+            <div class="dev-social">
+              <a class="dev-social-link" href="https://www.facebook.com/profile.php?id=61591813979366" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.16 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.78-3.9 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22c4.78-.78 8.44-4.94 8.44-9.94z"/></svg>
+                Facebook
+              </a>
+              <a class="dev-social-link" href="https://github.com/vrenesg" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5 0-.24-.01-1.05-.01-1.9-2.78.62-3.37-1.22-3.37-1.22-.45-1.18-1.11-1.49-1.11-1.49-.9-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.34-1.11.62-1.36-2.22-.26-4.56-1.13-4.56-5.03 0-1.11.38-2.02 1.01-2.73-.1-.26-.44-1.31.1-2.72 0 0 .83-.27 2.72 1.04a9.2 9.2 0 0 1 4.96 0c1.88-1.31 2.71-1.04 2.71-1.04.54 1.41.2 2.46.1 2.72.63.71 1.01 1.62 1.01 2.73 0 3.91-2.35 4.77-4.58 5.02.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .28.18.61.69.5A10.03 10.03 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
+                GitHub · vrenesg
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main><!-- end content-area -->
+
+  <!-- ════════ BOTTOM NAVIGATION ════════ -->
+  <nav class="bottom-nav" id="bottomNav" aria-label="Main navigation">
+    <button class="bnav-item active" data-tab="explore" aria-label="Explore">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <circle cx="12" cy="12" r="10"/>
+        <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+      </svg>
+      <span>Explore</span>
+    </button>
+    <button class="bnav-item" data-tab="places" aria-label="Places">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+        <circle cx="12" cy="10" r="3"/>
+      </svg>
+      <span>Places</span>
+    </button>
+    <button class="bnav-item bnav-trips" data-tab="trips" aria-label="My Trip">
+      <div class="bnav-trips-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+          <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+          <line x1="12" y1="12" x2="12" y2="16"/>
+          <line x1="10" y1="14" x2="14" y2="14"/>
+        </svg>
+        <span class="bnav-badge" id="bnavBadge" aria-live="polite"></span>
+      </div>
+      <span>My Trip</span>
+    </button>
+    <button class="bnav-item" data-tab="ferry" aria-label="Ferry">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M2 20a2.4 2.4 0 0 0 2 1 2.4 2.4 0 0 0 2-1 2.4 2.4 0 0 1 2-1 2.4 2.4 0 0 1 2 1 2.4 2.4 0 0 0 2 1 2.4 2.4 0 0 0 2-1 2.4 2.4 0 0 1 2-1 2.4 2.4 0 0 1 2 1"/>
+        <path d="M4 18V12a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6"/>
+        <path d="M8 12V8a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v4"/>
+        <path d="M12 6V3"/><path d="M10 3h4"/>
+      </svg>
+      <span>Ferry</span>
+    </button>
+    <button class="bnav-item" id="moreBtnNav" aria-label="More" aria-haspopup="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <circle cx="5" cy="12" r="1.5" fill="currentColor"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/><circle cx="19" cy="12" r="1.5" fill="currentColor"/>
+      </svg>
+      <span>More</span>
+    </button>
+  </nav>
+
+  <!-- ════════ MORE DRAWER ════════ -->
+  <div class="more-overlay" id="moreOverlay"></div>
+  <div class="more-drawer" id="moreDrawer" role="dialog" aria-label="More options" aria-hidden="true">
+    <div class="more-handle"></div>
+    <p class="more-drawer-label">More Options</p>
+    <div class="more-grid">
+      <button class="more-tile" data-tab="food">
+        <div class="more-tile-icon mt-orange">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+        </div>
+        <span>Food &amp; Dining</span>
+      </button>
+      <button class="more-tile" data-tab="compass">
+        <div class="more-tile-icon mt-teal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+        </div>
+        <span>Compass</span>
+      </button>
+      <button class="more-tile" data-tab="budget">
+        <div class="more-tile-icon mt-green">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <span>Budget</span>
+      </button>
+      <button class="more-tile" data-tab="guide">
+        <div class="more-tile-icon mt-purple">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        </div>
+        <span>Island Guide</span>
+      </button>
+      <button class="more-tile" data-tab="credits">
+        <div class="more-tile-icon mt-teal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg>
+        </div>
+        <span>Credits</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ════════ PLACE MODAL ════════ -->
+  <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
+    <div class="modal" id="modal" role="dialog" aria-modal="true">
+      <button class="modal-back" id="modalClose" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="19" y1="12" x2="5" y2="12"/>
+          <polyline points="12 19 5 12 12 5"/>
+        </svg>
+        Back
+      </button>
+      <div id="modalInner"></div>
+    </div>
+  </div>
+
+</div><!-- end app -->
+
+<script src="script.js"></script>
+</body>
+</html>
